@@ -18,14 +18,7 @@ GO
 -- Create date: <Create Date,,>
 -- Description:	<Description,,>
 -- =============================================
-CREATE PROCEDURE Cempleado
-
-	@nombre varchar(255) null,
-	@direccion varchar(255) null,
-	@fecha_nacimiento datetime null,
-	@estado_civil varchar(255) null,
-	@grado_academico varchar(255) null
-
+CREATE PROCEDURE Rempleado
 
 AS
 BEGIN
@@ -35,9 +28,7 @@ BEGIN
 
     -- Insert statements for procedure here
 	BEGIN
-		INSERT INTO EMPLEADOS
-		VALUES(@nombre,@direccion,@fecha_nacimiento,@estado_civil,@grado_academico)
+		SELECT * FROM EMPLEADOS
 	END
 END
 GO
-

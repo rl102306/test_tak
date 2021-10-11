@@ -18,14 +18,14 @@ GO
 -- Create date: <Create Date,,>
 -- Description:	<Description,,>
 -- =============================================
-CREATE PROCEDURE Cempleado
+CREATE PROCEDURE Uempleado
 
 	@nombre varchar(255) null,
 	@direccion varchar(255) null,
 	@fecha_nacimiento datetime null,
 	@estado_civil varchar(255) null,
-	@grado_academico varchar(255) null
-
+	@grado_academico varchar(255) null,
+	@id int null
 
 AS
 BEGIN
@@ -35,9 +35,10 @@ BEGIN
 
     -- Insert statements for procedure here
 	BEGIN
-		INSERT INTO EMPLEADOS
-		VALUES(@nombre,@direccion,@fecha_nacimiento,@estado_civil,@grado_academico)
+		UPDATE EMPLEADOS SET nombre = @nombre,
+		direccion = @direccion , fecha_nacimiento = @fecha_nacimiento,
+		estado_civil = @estado_civil, grado_academico = @grado_academico
+		WHERE id_empleado = @id
 	END
 END
 GO
-
